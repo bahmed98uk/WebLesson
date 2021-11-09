@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Demo</title>
+    <style>
+        .highlight{
+            color: red;
+            background-color: yellow;
+        }
+        .normal{
+            color: black;
+            background-color: lavender;
+        }
+    </style>
+</head>
+<body>
+<h1 id="greeting" class="normal"
+onmouseover="ChangeStyle(this,'normal','highlight')"
+onmouseout="ChangeStyle(this,'highlight','normal')">Javascript demo</h1>
+<!--<button onclick="SayHello()">Press me</button>-->
+<button onclick='document.getElementById("greeting").innerHTML
+    = "Good morning"'>Press me</button>
+
+<p id="objectDemo"></p>
+
+<div id="mySong"></div>
+<button onclick="AddALine(document.getElementById('mySong'))">Add a line</button>
+<button onclick="DeleteLastLine(document.getElementById('mySong'))">Delete a line</button>
+
+<script src="javascriptdemo.js"></script>
+<script>
+    class Person{
+        constructor(fName, lName, age){
+            this.firstName = fName;
+            this.lastName = lName;
+            this.age = age;
+        }
+        getFullName(){
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var bilal = new Person("Bilal", "Ahmed", 23);
+    document.getElementById("objectDemo").innerHTML
+        = bilal.getFullName() + " " + bilal.age;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
